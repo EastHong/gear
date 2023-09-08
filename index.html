@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- html名稱 -->
+    <title>減增速機組裝段估工基準</title> 
+    <style>
+        /* 在此添加CSS樣式 */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 30px; /* 全部label字體大小設為15 */
+            height: 30px;
+        }
+        select, input[type="text"] {
+            padding: 5px;
+            width: 200px;
+            font-size: 20px; /* listbox字體大小設為20 */
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+            color: blue;
+            font-size: 30px; /* fram標題字體大小設為30 */
+        }
+    </style>
+</head>
+<body>
+    <h1>減增速機組裝段估工基準</h1>
+    <form>
+        <div class="form-group">
+            <!--label for="listbox">項目：</label-->
+            <select id="listbox" name="listbox" size="8">
+            </select>
+        
+        </div>
+        <fieldset>
+            <legend>9000-01</legend>
+            <label id="label2" title="組裝">3B1A</label><span style="margin-left: 20px;"></span><label id="label9" style="color: red;"></label><span style="margin-left: 20px;"></span><label id="label17"></label><br> <!--3B1A-->
+            <label id="label3" title="試車">3B1C</label><span style="margin-left: 20px;"></span><label id="label10" style="color: red;"></label><span style="margin-left: 20px;"></span><label id="label18"></label><br> <!--3B1C-->
+            <label id="label4" title="配管">3B1D</label><span style="margin-left: 20px;"></span><label id="label11" style="color: red;"></label><span style="margin-left: 20px;"></span><label id="label19"></label><br> <!--3B1D-->
+            <label id="label5" title="箱外油漆">3B1P</label><span style="margin-left: 20px;"></span><label id="label12" style="color: red;"></label><span style="margin-left: 20px;"></span><label id="label20"></label><br> <!--3B1P-->
+        </fieldset>
+        <fieldset>  
+            <legend>8101-01</legend>
+            <label id="label6" title="清箱">3B1A</label><span style="margin-left: 20px;"></span><label id="label13" style="color: red;"></label><span style="margin-left: 20px;"></span><label id="label21"></label><br> <!-- 3B1A -->
+            <label id="label7" title="箱內油漆">3B1P</label><span style="margin-left: 20px;"></span><label id="label14" style="color: red;"></label><span style="margin-left: 20px;"></span><label id="label22"></label><br> <!-- 3B1P -->
+            <!--label id="label8">3B1D</label><span style="margin-left: 20px;"></span><label id="label15" style="color: red;"></label><br --> <!-- 增加 label15 -->           
+        </fieldset>   
+        </div>
+        <!--div class="form-group"-->
+        <label id="label16" style="font-size: 25px;" >預算工繳：1400/HR</label><br>
+        <label id="label1" style="font-size: 25px;" >基準日：2023-08-31</label>    
+    </form>
+
+    <!-- 在此添加JavaScript代碼 -->
+    <script type="text/javascript">
+      var data = `1,冷卻水塔KAVU300,65,,10,20,8,4
+      2,冷卻水塔KAVU310,70,10,10,20,8,4
+      3,冷卻水塔KAVU360,75,,10,20,8,4
+      4,冷卻水塔KAVU385,80,,10,24,8,4
+      5,冷卻水塔KAVU420,80,,12,24,8,4
+      6,FSTK555磨煤機,150,56,32,30,15,15
+      7,反應器攪拌機G/R,160,36,16,28,12,10
+      8,乾燥機G/R,120,,12,24,10,8
+      9,堆取煤機G/R(0~5MT),70,24,16,24,8,6
+      9,堆取煤機G/R(5~16MT),110,31,20,28,14,10
+      9,堆取煤機G/R(16MT~),140,38,24,32,20,15
+      10,總成組裝裝置(同上)型號不分,53,,10,8,,
+      11,TSE90-G/R(五段箱體),80,28,16,24,10,10
+      12,TSE-130G/R(五段箱體),120,36,16,28,18,15
+      13,KPAV100-G/R,220,170,50,60,30,25
+      14,KPAV125-G/R,230,215,60,65,35,30
+      15,KPAV140-G/R,230,380,75,160,40,35
+      16,KPAV160-G/R,250,215,60,65,45,40
+      17,KPAV170-G/R,250,280,75,80,45,40
+      18,KPAV212-G/R,750,380,280,160,60,70
+      19,KPAV232-G/R,1000,420,290,180,80,120
+      20,KPAV236-G/R,1000,420,290,180,80,120 
+      21,奇美雙軸押出機-G/R-TEM120 ,250,54,24,32,30,30
+      22,奇美雙軸押出機-G/R-TEM160,280,68,28,38,30,30
+      23,冬山電石廠雙軸押出機-G/R,210,56,24,32,20,25
+      24,南亞積水式押出機-G/R(K9XB4A),150,30,36,25,8,6
+      25,軋鋼1V減速機(91特殊油漆),220,98,54,42,45,40
+      26,軋鋼3V減速機(91特殊油漆),190,90,54,42,40,40
+      27,軋鋼5V減速機(91特殊油漆),150,85,38,48,35,30
+      28,軋鋼7V減速機(91特殊油漆),130,64,38,40,25,30
+      29,軋鋼9V減速機(91特殊油漆),110,64,38,40,20,20
+      30,軋鋼11V減速機(91特殊油漆),80,40,38,40,18,18
+      31,軋鋼13V減速機(91特殊油漆),70,40,38,32,16,15
+      32,軋鋼2H減速機(91特殊油漆),170,65,42,40,30,30
+      33,軋鋼4H減速機(91特殊油漆),150,65,42,40,25,25
+      34,軋鋼6H減速機(91特殊油漆),120,60,40,40,22,20
+      35,軋鋼8H減速機(91特殊油漆),110,65,32,36,20,18
+      36,軋鋼10H減速機(91特殊油漆),100,65,32,36,20,16
+      37,軋鋼12H減速機(91特殊油漆),90,65,24,36,18,15
+      38,軋鋼14H減速機(91特殊油漆),80,60,24,32,18,15
+      39,軋鋼16H減速機(91特殊油漆),70,67,32,42,18,15
+      40,TA580A陝鼓增速機G/I (西門子案工時),80,30,26,32,20,
+      41,TA600A陝鼓增速機G/I (西門子案工時),85,30,27,32,20,
+      42,TA630A陝鼓增速機G/I (西門子案工時),85,30,28,34,20,
+      43,TA670A陝鼓增速機G/I (西門子案工時),90,30,28,36,20,
+      44,TA710A陝鼓增速機G/I,130,36,28,36,20,
+      45,TA800A陝鼓增速機G/I (加基座工時),180(245),48,56,48,30,
+      46,TA710B陝鼓增速機(西門子),190,30,28,36,25,
+      47,TA200B增速機(西門子) G/I,150,16,38,28,15,
+      48,TA600A陝鼓增速機(反向試車),130,30,56,32,20,
+      49,TA630A陝鼓增速機(反向試車),140,30,56,32,20,
+      50,TA670A陝鼓增速機(反向試車),140,30,56,32,20,
+      51,TA710A陝鼓增速機(反向試車),195,30,56,32,20,
+      52,TA800A陝鼓增速機(反向試車),240,48,100,48,20,
+      53,TA200增速機G/I,50,12,16,24,10,
+      54,TA250增速機G/I,50,12,16,24,10,
+      55,TA250A增速機G/I,50,12,16,24,10,
+      56,TA280增速機G/I,60,16,20,26,10,
+      57,TA320增速機G/I,70,16,20,28,12,
+      58,TA360增速機G/I,75,16,20,32,12,
+      59,TA400增速機G/I,80,16,24,32,12,
+      60,底部攪拌機G/R,85,38,16,24,12,8
+      61,行走天車減速機G/R(0~5MT),60,28,16,24,4,4
+      61,行走天車減速機G/R(5~16MT),90,28,16,24,7,7
+      61,行走天車減速機G/R(16MT~),120,28,16,24,10,10
+      62,軋鋼1V減速機 (#69 油漆),220,98,54,42,22,20
+      63,軋鋼3V減速機 (#69 油漆),190,90,54,42,20,18
+      64,軋鋼5V減速機 (#69 油漆),150,85,38,48,18,16
+      65,軋鋼7V減速機 (#69 油漆),130,64,38,40,18,16
+      66,軋鋼9V減速機 (#69 油漆),110,62,38,40,15,14
+      67,軋鋼11V減速機 (#69 油漆),80,40,38,40,15,13
+      68,軋鋼13V減速機 (#69 油漆),70,40,38,32,12,10
+      69,軋鋼2H減速機 (#69 油漆),170,65,42,40,22,18
+      70,軋鋼4H減速機 (#69 油漆),150,65,42,40,20,20
+      71,軋鋼6H減速機 (#69 油漆),120,60,40,40,18,15
+      72,軋鋼8H減速機 (#69 油漆),110,64,32,36,18,15
+      73,軋鋼10H減速機 (#69 油漆),100,64,32,36,15,12
+      74,軋鋼12H減速機 (#69 油漆),90,64,32,36,12,12
+      75,軋鋼14H減速機 (#69 油漆),80,60,24,32,10,10
+      76,軋鋼16H減速機 (#69 油漆),70,68,32,42,10,8
+      77,KE400製粒機減速機製作,240,60,30,28,15,12
+      78,鋼捲準備線CPL2 Tension Reel G/R(0~10MT),210,232,250,56,15,12
+      78,鋼捲準備線CPL2 Tension Reel G/R(10~20MT),240,232,250,56,17,15
+      78,鋼捲準備線CPL2 Tension Reel G/R(20MT~),280,232,250,56,20,18
+      79,重合槽攪拌機G/R製作,180,42,20,28,15,12
+      80,Brucekner雙軸押出機G/R,250,48,152,32,17,15
+      81,原絲DMSO乾燥機八輪機G/R,1000,152,410,128,50,30
+      82,PVC底部槽攪拌機G/R,120,72,32,36,15,12
+      83,TA400高速G/R製作,100,32,48,10,16,12
+      84,TA360(含)在寧波製作,80,24,24,12,12,12
+      85,(福欣)鋼捲準備線CPL I Roll #2 G/R,276,232,65,56,17,15
+      86,福欣鋼鐵軋鋼MR F1~F5(P/S F1~F7),400,,,,,
+      87,河靜鋼鐵軋鋼MR F1~F4,350,92,58,32,24,16
+      88,河靜鋼鐵軋鋼P/S F1~F7,360,92,58,32,24,16
+      89,河靜鋼鐵軋鋼SSP(L / R),360,92,60,32,24,16
+      90,河靜鋼鐵軋鋼CROP,350,92,60,32,24,16
+      91,KB500 CONVEYER G/R,72,10,10,20,5,5
+      92,KB450 CONVEYER G/R,68,10,10,20,5,5
+      93,KB400 CONVEYER G/R,66,10,10,20,4,4
+      94,KB350 CONVEYER G/R,64,10,10,20,4,4
+      95,Pinion gear shaft組裝軸承/聯軸器及蓋板(K9HN0A~G),72,,,10,,
+      96,中鋼條鋼二廠S12剪切機減速機製作(A0D51A),150,80,25,36,16,12
+      96,汽電處/菲律賓Masinloc #4電廠鍋爐篩選減速機(A0XN2C),50,,28,20,12,6
+      97,台塑仁武PVC廠PREPO預重合槽攪拌減速機製作(A0DC4B),120,35,22,18,15,12
+      98,台塑美國Baton Rouge/VCM廠Recycle Gas Compressor增速機(AAXW0A),85,12,32,20,16,
+      99,中鋼線材一廠#4軋機雙軸減速機製作(K8D55A),250,90,50,50,36,32
+      100,中機/中鋼CDQ天車主吊減速機製作(A0D62A),240,,60,60,45,40
+      101,南亞嘉義機工廠7E-單軸押出機減速機製作(AAXB1A),55,10,12,12,7,5
+      102,福欣特殊鋼Corp Shear GB用輸出軸齒輪組(圓筒體)(A0HN7A),200,,,,10,10
+      103,福欣特殊鋼Corp Shear GB用輸出軸大齒輪組(A0HN9A),200,,,,10,10
+      104,麥寮汽電/L10D-1輸煤減速機製作(AAXG5A),100,,24,30,12,10
+      105,中鋼#3燒結Sinter Breaker M.D Drive G/R製作(K8D57A),250,60,45,40,20,18
+      106,中鋼#1 Bridle #3 Roll減速機製作(AAD50A),72,36,20,20,6,5
+      107,台塑仁武台麗朗脫泡塔減速機製作(AADC0A),60,20,16,16,5,5
+      108,台塑仁武PVC廠PREPO預重合槽攪拌減速機製作(變速換檔.A0DC4B),100,16,20,16,15,12
+      110,TA800C陝鼓增速機(西門子)(與TA710B略大,190,30,28,36,25,
+      111,PTUK/Gerdau Vertical Edger Gearbox (AAHT0A),1560,460,243,80,80,60
+      112,多軸陝鼓增速機AAHJ1A,825,85,64,40,30,20
+      113,陝鼓/中化學天辰全港丙烯項目TA360高速G/I製作(AAHJ3AC焊接箱體西門子組裝),100,52,20,32,12,8
+      113,陝鼓/瑞來PDH項目離合傳動箱124T製作(AAHJ7A21),185,38,98,32,20,
+      114,上海浩石/燕山鋼鐵BPRT變速離合器齒輪箱BTA450-SFW(A2HG0A21),150,32,48,45,30,
+      115,豐興鋼鐵AAGL0A/B/C,205,85,42,40,44,
+      116,台灣巴斯夫T90乾燥機減速機(箱內組裝標準工時)AAGL8A21,200,,24,24,10,8  
+      尾行,...`; // 資料尾行
+
+      var lines = data.split('\n');
+      var listbox = document.getElementById('listbox');
+      
+      for (var i = 0; i < lines.length - 1; i++) {
+          var line = lines[i];
+          var parts = line.split(',');
+          var option = document.createElement('option');
+          option.value = parts[0];
+          option.text = parts[1];
+          listbox.add(option);
+      }
+
+      var lastLineParts = lines[lines.length - 1].split(',');
+      document.getElementById('label1').textContent += lastLineParts[1].substring(2);
+
+      // listbox寬/高
+      listbox.style.width = '800px';
+      listbox.style.height= '400px';
+
+      // 點選listbox，時數label9 ~ label14顯示
+      listbox.addEventListener('change', function() {
+        var selectedOption = listbox.options[listbox.selectedIndex];
+        var selectedData = lines.find(function(line) {
+          return line.startsWith(selectedOption.value + ',');
+        });
+        var parts = selectedData.split(',');
+        document.getElementById('label9').textContent = parts[2];
+        document.getElementById('label10').textContent = parts[3];
+        document.getElementById('label11').textContent = parts[4];
+        document.getElementById('label12').textContent = parts[5];
+        document.getElementById('label13').textContent = parts[6];
+        document.getElementById('label14').textContent = parts[7];
+
+        if (parts[2]) {
+            document.getElementById('label17').textContent = "(" + (parts[2] * 1400).toLocaleString() + ")";
+        } else {
+            document.getElementById('label17').textContent = "";
+        }
+        if (parts[3]) {
+            document.getElementById('label18').textContent = "(" + (parts[3] * 1400).toLocaleString() + ")";
+        } else {
+            document.getElementById('label18').textContent = "";
+        }
+        if (parts[4]) {
+            document.getElementById('label19').textContent = "(" + (parts[4] * 1400).toLocaleString() + ")";
+        } else {
+            document.getElementById('label19').textContent = "";
+        }
+        if (parts[5]) {
+            document.getElementById('label20').textContent = "(" + (parts[5] * 1400).toLocaleString() + ")";
+        } else {
+            document.getElementById('label20').textContent = "";
+        }
+        if (parts[6]) {
+            document.getElementById('label21').textContent = "(" + (parts[6] * 1400).toLocaleString() + ")";
+        } else {
+            document.getElementById('label21').textContent = "";
+        }
+        if (parts[7]) {
+            document.getElementById('label22').textContent = "(" + (parts[7] * 1400).toLocaleString() + ")";
+        } else {
+            document.getElementById('label22').textContent = "";
+        }
+
+        var fram1Total = (parts[2] ? parts[2] * 1400 : 0) + (parts[3] ? parts[3] * 1400 : 0) + (parts[4] ? parts[4] * 1400 : 0) + (parts[5] ? parts[5] * 1400 : 0);
+        var fram2Total = (parts[6] ? parts[6] * 1400 : 0) + (parts[7] ? parts[7] * 1400 : 0);
+        document.getElementById('fram1').firstElementChild.textContent = "9000-01 (" + fram1Total.toLocaleString() + ")";
+        document.getElementById('fram2').firstElementChild.textContent = "8101-01 (" + fram2Total.toLocaleString() + ")";
+      });
+    </script>
+</body>
+</html>
